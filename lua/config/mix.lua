@@ -1,8 +1,12 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter", --fancy highlights
+	{ -- tree sitter fails on 11.6 but idfc nightly aint working for my config so this prolly aint doing shit rn
+		"nvim-treesitter/nvim-treesitter",
 		lazy = false,
 		build = ":TSUpdate",
+		opts = {
+			ensure_installed = { "go", "c", "lua" },
+			indent = { enable = true },
+		},
 	},
 	{
 		"stevearc/oil.nvim", --directory handling
